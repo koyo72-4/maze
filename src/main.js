@@ -23,10 +23,12 @@ class Maze {
 
   randomSlashes(rowIndex, columnIndex) {
     while (this._numberOfSlashes < 200) {
-      this._mazeGrid[rowIndex][columnIndex] = '/';
-      this._numberOfSlashes++;
-      this.print();
-      console.log('------');
+      if (this._numberOfSlashes = 0) {
+        this._mazeGrid[rowIndex][columnIndex] = '/';
+        this._numberOfSlashes++;
+        this.print();
+        console.log('------');
+      }
       const gridOffsets = [
         [-1, 0],
         [1, 0],
@@ -55,16 +57,14 @@ class Maze {
         console.log(`nextSlashOffset: ${nextSlashOffset}`);
         let newRowIndex = frees[nextSlashOffset][0];
         let newColumnIndex = frees[nextSlashOffset][1];
-        if (newRowIndex >= 0 && newRowIndex < 10 && newColumnIndex >= 0 && newColumnIndex < 10) {
-          if (this._mazeGrid[newRowIndex][newColumnIndex] === 'o') {
-            this._mazeGrid[newRowIndex][newColumnIndex] = '/';
-            this._numberOfSlashes++;
-            this.print();
-            console.log('-----');
-            console.log(`newRowIndex: ${newRowIndex}`);
-            console.log(`newColumnIndex: ${newColumnIndex}`);
-            return this.randomSlashes(newRowIndex, newColumnIndex);
-          }
+        if (this._mazeGrid[newRowIndex][newColumnIndex] === 'o') {
+          this._mazeGrid[newRowIndex][newColumnIndex] = '/';
+          this._numberOfSlashes++;
+          this.print();
+          console.log('-----');
+          console.log(`newRowIndex: ${newRowIndex}`);
+          console.log(`newColumnIndex: ${newColumnIndex}`);
+          return this.randomSlashes(newRowIndex, newColumnIndex);
         }
       } else {
         console.log(false);
