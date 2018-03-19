@@ -39,6 +39,9 @@ class Maze {
         this.print();
         console.log('------');
       }
+      if (this._slashArray.length >= 2) {
+        return console.log('this._slashArray.length >= 2');
+      }
       const gridOffsets = [
         [-1, 0],
         [1, 0],
