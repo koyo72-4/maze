@@ -78,7 +78,7 @@ class Maze {
         }
       }
       if (this._slashArray.length === 4) {
-        let randomTurn = 0; // Math.floor(Math.random() * 3);
+        let randomTurn = Math.floor(Math.random() * 3);
         if (randomTurn === 0) {
           let a;
           let b;
@@ -157,6 +157,125 @@ class Maze {
             this.print();
             console.log(this._slashArray);
           }
+        } else if (randomTurn === 1) {
+          let a;
+          let b;
+          let c;
+          if (this._slashArray[3][0] < this._slashArray[1][0] && this._slashArray[3][1] < this._slashArray[2][1]) {
+            a = 1;
+            b = 0;
+            c = -1;
+          } else if (this._slashArray[3][0] > this._slashArray[1][0] && this._slashArray[3][1] > this._slashArray[2][1]) {
+            a = -1;
+            b = 0;
+            c = 1;
+          } else if (this._slashArray[3][0] < this._slashArray[2][0] && this._slashArray[3][1] < this._slashArray[1][1]) {
+            a = 0;
+            b = -1;
+          } else if (this._slashArray[3][0] > this._slashArray[2][0] && this._slashArray[3][1] > this._slashArray[1][1]) {
+            a = 0;
+            b = 1;
+          }
+          if (this._slashArray[3][0] < this._slashArray[1][0] && this._slashArray[3][1] < this._slashArray[2][1] || this._slashArray[3][0] > this._slashArray[1][0] && this._slashArray[3][1] > this._slashArray[2][1]) {
+            rowIndex = this._slashArray[1][0] + a;
+            columnIndex = this._slashArray[1][1] + b;
+            this.arraySlashes(4, rowIndex, columnIndex);
+
+            rowIndex = this._slashArray[3][0] + b;
+            columnIndex = this._slashArray[3][1] + c;
+            this.arraySlashes(5, rowIndex, columnIndex);
+
+            rowIndex = this._slashArray[5][0] + b;
+            columnIndex = this._slashArray[5][1] + c;
+            this.arraySlashes(6, rowIndex, columnIndex);
+
+            rowIndex = this._slashArray[6][0] + a;
+            columnIndex = this._slashArray[6][1] + b;
+            this.arraySlashes(7, rowIndex, columnIndex);
+
+            rowIndex = this._slashArray[7][0] + a;
+            columnIndex = this._slashArray[7][1] + b;
+            this.arraySlashes(8, rowIndex, columnIndex);
+
+            rowIndex = this._slashArray[8][0] + a;
+            columnIndex = this._slashArray[8][1] + b;
+            this.arraySlashes(9, rowIndex, columnIndex);
+
+            i += 6;
+            console.log('------');
+            this.print();
+            console.log(this._slashArray);
+          } else if (this._slashArray[3][0] < this._slashArray[2][0] && this._slashArray[3][1] < this._slashArray[1][1] || this._slashArray[3][0] > this._slashArray[2][0] && this._slashArray[3][1] > this._slashArray[1][1]) {
+            rowIndex = this._slashArray[3][0] + a;
+            columnIndex = this._slashArray[3][1] + b;
+            this.arraySlashes(4, rowIndex, columnIndex);
+
+            rowIndex = this._slashArray[1][0] + b;
+            columnIndex = this._slashArray[1][1] + a;
+            this.arraySlashes(5, rowIndex, columnIndex);
+
+            rowIndex = this._slashArray[5][0] + b;
+            columnIndex = this._slashArray[5][1] + a;
+            this.arraySlashes(6, rowIndex, columnIndex);
+
+            rowIndex = this._slashArray[6][0] + a;
+            columnIndex = this._slashArray[6][1] + b;
+            this.arraySlashes(7, rowIndex, columnIndex);
+
+            rowIndex = this._slashArray[7][0] + a;
+            columnIndex = this._slashArray[7][1] + b;
+            this.arraySlashes(8, rowIndex, columnIndex);
+
+            rowIndex = this._slashArray[8][0] + a;
+            columnIndex = this._slashArray[8][1] + b;
+            this.arraySlashes(9, rowIndex, columnIndex);
+
+            i += 6;
+            console.log('------');
+            this.print();
+            console.log(this._slashArray);
+          }
+        } else if (randomTurn === 2) {
+          let a;
+          let b;
+          console.log('console');
+          if (this._slashArray[3][0] < this._slashArray[1][0] && this._slashArray[3][1] < this._slashArray[2][1]) {
+            a = 0;
+            b = -1;
+            console.log('a, b');
+          } else if (this._slashArray[3][0] > this._slashArray[1][0] && this._slashArray[3][1] > this._slashArray[2][1]) {
+            a = 0;
+            b = 1;
+            console.log('a, b');
+          } else if (this._slashArray[3][0] < this._slashArray[2][0] && this._slashArray[3][1] < this._slashArray[1][1]) {
+            a = -1;
+            b = 0;
+            console.log('a, b');
+          } else if (this._slashArray[3][0] > this._slashArray[2][0] && this._slashArray[3][1] > this._slashArray[1][1]) {
+            a = 1;
+            b = 0;
+            console.log('a, b');
+          }
+          rowIndex = this._slashArray[3][0] + a;
+          columnIndex = this._slashArray[3][1] + b;
+          this.arraySlashes(4, rowIndex, columnIndex);
+
+          rowIndex = this._slashArray[4][0] + a;
+          columnIndex = this._slashArray[4][1] + b;
+          this.arraySlashes(5, rowIndex, columnIndex);
+
+          rowIndex = this._slashArray[1][0] + a;
+          columnIndex = this._slashArray[1][1] + b;
+          this.arraySlashes(6, rowIndex, columnIndex);
+
+          rowIndex = this._slashArray[6][0] + a;
+          columnIndex = this._slashArray[6][1] + b;
+          this.arraySlashes(7, rowIndex, columnIndex);
+
+          i += 4;
+          console.log('------');
+          this.print();
+          console.log(this._slashArray);
         }
         return;
       }
