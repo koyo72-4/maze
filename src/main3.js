@@ -114,16 +114,22 @@ class Maze {
         if (randomTurn === 0) {
           this._slashArray[4] = [this._slashArray[3][0] - 1, this._slashArray[3][1]];
           this._mazeGrid[this._slashArray[4][0]][this._slashArray[4][1]] = '/';
+
           this._slashArray[5] = [this._slashArray[1][0], this._slashArray[1][1] - 1];
           this._mazeGrid[this._slashArray[5][0]][this._slashArray[5][1]] = '/';
+
           this._slashArray[6] = [this._slashArray[5][0], this._slashArray[5][1] - 1];
           this._mazeGrid[this._slashArray[6][0]][this._slashArray[6][1]] = '/';
+
           this._slashArray[7] = [this._slashArray[6][0] - 1, this._slashArray[6][1]];
           this._mazeGrid[this._slashArray[7][0]][this._slashArray[7][1]] = '/';
+
           this._slashArray[8] = [this._slashArray[7][0] - 1, this._slashArray[7][1]];
           this._mazeGrid[this._slashArray[8][0]][this._slashArray[8][1]] = '/';
+
           this._slashArray[9] = [this._slashArray[8][0] - 1, this._slashArray[8][1]];
           this._mazeGrid[this._slashArray[9][0]][this._slashArray[9][1]] = '/';
+
           this._numberOfSlashes += 6;
           i += 6;
           console.log('------');
