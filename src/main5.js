@@ -43,7 +43,6 @@ class Maze {
         console.log('------');
       }
       if (this._slashArray.length === 2) {
-        console.log('this._slashArray.length === 2');
         if (this._slashArray[0][0] === this._slashArray[1][0]) {
           if (this._slashArray[0][1] > this._slashArray[1][1]) {
             rowIndex = this._slashArray[0][0] - 2;
