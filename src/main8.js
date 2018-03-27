@@ -19,9 +19,9 @@ class Maze {
 
   static generateMaze() {
     let grid = [];
-    for (let h = 0; h < 30; h++) {
+    for (let h = 0; h < 35; h++) {
       let row = [];
-      for (let j = 0; j < 30; j++) {
+      for (let j = 0; j < 35; j++) {
         row.push('o');
       }
       grid.push(row);
@@ -261,20 +261,17 @@ class Maze {
       b = 0;
     }
     rowIndex = this._cache.left[0] + a;
-    console.log('rowIndex:');
-    console.log(rowIndex);
+    console.log(`rowIndex: ${rowIndex}`);
     columnIndex = this._cache.left[1] + b;
-    console.log('columnIndex:');
+    console.log(`columnIndex: ${columnIndex}`);
     console.log(columnIndex);
     this.arraySlashes(rowIndex, columnIndex);
     this._cache.left = this._slashArray[this._i];
     this._i++;
     rowIndex = this._cache.right[0] + a;
-    console.log('rowIndex:');
-    console.log(rowIndex);
+    console.log(`rowIndex: ${rowIndex}`);
     columnIndex = this._cache.right[1] + b;
-    console.log('columnIndex:');
-    console.log(columnIndex);
+    console.log(`columnIndex: ${columnIndex}`);
     this.arraySlashes(rowIndex, columnIndex);
     this._cache.right = this._slashArray[this._i];
     this._i++;
@@ -309,22 +306,28 @@ class Maze {
       columnIndex = this._cache.left[1] + b;
       this.arraySlashes(rowIndex, columnIndex);
       this._i++;
+      console.log(`rowIndex: ${rowIndex}. columnIndex: ${columnIndex}. i: ${this._i}.`);
       rowIndex = this._cache.right[0] + b;
       columnIndex = this._cache.right[1] + c;
       this.arraySlashes(rowIndex, columnIndex);
       this._i++;
+      console.log(`rowIndex: ${rowIndex}. columnIndex: ${columnIndex}. i: ${this._i}.`);
       columnIndex = this._cache.right[1] + d;
       this.arraySlashes(rowIndex, columnIndex);
       this._i++;
+      console.log(`rowIndex: ${rowIndex}. columnIndex: ${columnIndex}. i: ${this._i}.`);
       rowIndex = this._cache.left[0] + c;
       this.arraySlashes(rowIndex, columnIndex);
       this._i++;
+      console.log(`rowIndex: ${rowIndex}. columnIndex: ${columnIndex}. i: ${this._i}.`);
       rowIndex = this._cache.left[0] + b;
       this.arraySlashes(rowIndex, columnIndex);
       this._i++;
+      console.log(`rowIndex: ${rowIndex}. columnIndex: ${columnIndex}. i: ${this._i}.`);
       rowIndex = this._cache.left[0] + a;
       this.arraySlashes(rowIndex, columnIndex);
       this._i++;
+      console.log(`rowIndex: ${rowIndex}. columnIndex: ${columnIndex}. i: ${this._i}.`);
       this._cache.left = this._slashArray[this._i - 6];
       this._cache.right = this._slashArray[this._i - 1];
       console.log('cache:');
@@ -345,22 +348,28 @@ class Maze {
       columnIndex = this._cache.left[1] + b;
       this.arraySlashes(rowIndex, columnIndex);
       this._i++;
+      console.log(`rowIndex: ${rowIndex}. columnIndex: ${columnIndex}. i: ${this._i}.`);
       rowIndex = this._cache.right[0] + b;
       columnIndex = this._cache.right[1] + a;
       this.arraySlashes(rowIndex, columnIndex);
       this._i++;
+      console.log(`rowIndex: ${rowIndex}. columnIndex: ${columnIndex}. i: ${this._i}.`);
       rowIndex = this._cache.right[0] + c;
       this.arraySlashes(rowIndex, columnIndex);
       this._i++;
+      console.log(`rowIndex: ${rowIndex}. columnIndex: ${columnIndex}. i: ${this._i}.`);
       columnIndex = this._cache.right[1] + b;
       this.arraySlashes(rowIndex, columnIndex);
       this._i++;
+      console.log(`rowIndex: ${rowIndex}. columnIndex: ${columnIndex}. i: ${this._i}.`);
       columnIndex = this._cache.left[1] + a;
       this.arraySlashes(rowIndex, columnIndex);
       this._i++;
+      console.log(`rowIndex: ${rowIndex}. columnIndex: ${columnIndex}. i: ${this._i}.`);
       columnIndex = this._cache.left[1] + b;
       this.arraySlashes(rowIndex, columnIndex);
       this._i++;
+      console.log(`rowIndex: ${rowIndex}. columnIndex: ${columnIndex}. i: ${this._i}.`);
       this._cache.left = this._slashArray[this._i - 6];
       this._cache.right = this._slashArray[this._i - 1];
       console.log('cache:');
@@ -391,22 +400,28 @@ class Maze {
       columnIndex = this._cache.right[1] + b;
       this.arraySlashes(rowIndex, columnIndex);
       this._i++;
+      console.log(`rowIndex: ${rowIndex}. columnIndex: ${columnIndex}. i: ${this._i}.`);
       rowIndex = this._cache.left[0] + b;
       columnIndex = this._cache.left[1] + a;
       this.arraySlashes(rowIndex, columnIndex);
       this._i++;
+      console.log(`rowIndex: ${rowIndex}. columnIndex: ${columnIndex}. i: ${this._i}.`);
       columnIndex = this._cache.left[1] + c;
       this.arraySlashes(rowIndex, columnIndex);
       this._i++;
+      console.log(`rowIndex: ${rowIndex}. columnIndex: ${columnIndex}. i: ${this._i}.`);
       rowIndex = this._cache.left[0] + a;
       this.arraySlashes(rowIndex, columnIndex);
       this._i++;
+      console.log(`rowIndex: ${rowIndex}. columnIndex: ${columnIndex}. i: ${this._i}.`);
       rowIndex = this._cache.right[0] + b;
       this.arraySlashes(rowIndex, columnIndex);
       this._i++;
+      console.log(`rowIndex: ${rowIndex}. columnIndex: ${columnIndex}. i: ${this._i}.`);
       rowIndex = this._cache.right[0] + a;
       this.arraySlashes(rowIndex, columnIndex);
       this._i++;
+      console.log(`rowIndex: ${rowIndex}. columnIndex: ${columnIndex}. i: ${this._i}.`);
       this._cache.right = this._slashArray[this._i - 6];
       this._cache.left = this._slashArray[this._i - 1];
       console.log('cache:');
@@ -418,7 +433,7 @@ class Maze {
         b = 1;
         c = -1;
         d = -2;
-      } else if (this._cache.left[0] > this._cache.right[0]) {
+      } else if (this._cache.left[1] > this._cache.right[1]) {
         console.log('this._cache.left[1] > this._cache.right[1]');
         a = 0;
         b = -1;
@@ -429,22 +444,28 @@ class Maze {
       columnIndex = this._cache.right[1] + b;
       this.arraySlashes(rowIndex, columnIndex);
       this._i++;
+      console.log(`rowIndex: ${rowIndex}. columnIndex: ${columnIndex}. i: ${this._i}.`);
       rowIndex = this._cache.left[0] + c;
       columnIndex = this._cache.left[1] + a;
       this.arraySlashes(rowIndex, columnIndex);
       this._i++;
+      console.log(`rowIndex: ${rowIndex}. columnIndex: ${columnIndex}. i: ${this._i}.`);
       rowIndex = this._cache.left[0] + d;
       this.arraySlashes(rowIndex, columnIndex);
       this._i++;
+      console.log(`rowIndex: ${rowIndex}. columnIndex: ${columnIndex}. i: ${this._i}.`);
       columnIndex = this._cache.left[1] + b;
       this.arraySlashes(rowIndex, columnIndex);
       this._i++;
+      console.log(`rowIndex: ${rowIndex}. columnIndex: ${columnIndex}. i: ${this._i}.`);
       columnIndex = this._cache.right[1] + a;
       this.arraySlashes(rowIndex, columnIndex);
       this._i++;
+      console.log(`rowIndex: ${rowIndex}. columnIndex: ${columnIndex}. i: ${this._i}.`);
       columnIndex = this._cache.right[1] + b;
       this.arraySlashes(rowIndex, columnIndex);
       this._i++;
+      console.log(`rowIndex: ${rowIndex}. columnIndex: ${columnIndex}. i: ${this._i}.`);
       this._cache.right = this._slashArray[this._i - 6];
       this._cache.left = this._slashArray[this._i - 1];
       console.log('cache:');
@@ -453,55 +474,121 @@ class Maze {
   }
 
   randomSlashes(rowIndex, columnIndex) {
-    if (this._i >= 100) {
+    if (this._i >= 350) {
+      console.log('this._i >= 100, so return');
       return;
     }
     if (!this._cache.left) {
-      console.log('first time');
       this.arraySlashes(rowIndex, columnIndex);
+      console.log(`first slash: ${rowIndex}, ${columnIndex}`);
       let randomLeft = Math.floor(Math.random() * 2);
       console.log(this._cache);
       if (randomLeft === 0) {
         this._cache.left = this._slashArray[this._i];
-        console.log(this._cache.left[0]);
         this._i++;
-        this.arraySlashes(rowIndex + 2, columnIndex);
+        rowIndex += 2;
+        this.arraySlashes(rowIndex, columnIndex);
         this._cache.right = this._slashArray[this._i];
         console.log(this._cache);
+        console.log('slashArray:');
+        console.log(this._slashArray);
+        console.log(`i: ${this._i}`);
+        console.log(`rowIndex: ${rowIndex}. columnIndex: ${columnIndex}`);
       } else if (randomLeft === 1) {
         this._cache.right = this._slashArray[this._i];
-        console.log(this._cache.right[0]);
         this._i++;
-        this.arraySlashes(rowIndex - 2, columnIndex);
+        rowIndex -= 2;
+        this.arraySlashes(rowIndex, columnIndex);
         this._cache.left = this._slashArray[this._i];
         console.log(this._cache);
+        console.log(`slashArray: ${this._slashArray}`);
+        console.log(`i: ${this._i}`);
+        console.log(`rowIndex: ${rowIndex}. columnIndex: ${columnIndex}`);
       }
       this._i++;
+      console.log(`i: ${this._i}`);
     }
+    this._object.edge_onlyStraight = false;
+    this._object.edge_noLeft = false;
+    this._object.edge_noRight = false;
+    this._object.slashes_onlyStraight = false;
+    this._object.slashes_noLeft = false;
+    this._object.slashes_noRight = false;
+    console.log(`edge_onlyStraight: ${this._object.edge_onlyStraight}`);
+    console.log(`edge_noLeft: ${this._object.edge_noLeft}`);
+    console.log(`edge_noRight: ${this._object.edge_noRight}`);
+    console.log(`slashes_onlyStraight: ${this._object.slashes_onlyStraight}`);
+    console.log(`slashes_noLeft: ${this._object.slashes_noLeft}`);
+    console.log(`slashes_noRight: ${this._object.slashes_noRight}`);
     this.testEdge_onlyStraight();
     if (this._object.edge_onlyStraight === true) {
+      console.log(`edge_onlyStraight: ${this._object.edge_onlyStraight}`);
+      console.log(`edge_noLeft: ${this._object.edge_noLeft}`);
+      console.log(`edge_noRight: ${this._object.edge_noRight}`);
+      console.log(`slashes_onlyStraight: ${this._object.slashes_onlyStraight}`);
+      console.log(`slashes_noLeft: ${this._object.slashes_noLeft}`);
+      console.log(`slashes_noRight: ${this._object.slashes_noRight}`);
       this.turn();
       console.log(`this._object.randomTurn: ${this._object.randomTurn}`);
+      console.log('straight, then return');
       this.goStraight(rowIndex, columnIndex);
       return;
     } else if (this._object.edge_onlyStraight === false) {
+      console.log(`edge_onlyStraight: ${this._object.edge_onlyStraight}`);
+      console.log(`edge_noLeft: ${this._object.edge_noLeft}`);
+      console.log(`edge_noRight: ${this._object.edge_noRight}`);
+      console.log(`slashes_onlyStraight: ${this._object.slashes_onlyStraight}`);
+      console.log(`slashes_noLeft: ${this._object.slashes_noLeft}`);
+      console.log(`slashes_noRight: ${this._object.slashes_noRight}`);
       this.testSlashes_onlyStraight();
       if (this._object.slashes_onlyStraight === true) {
+        console.log(`edge_onlyStraight: ${this._object.edge_onlyStraight}`);
+        console.log(`edge_noLeft: ${this._object.edge_noLeft}`);
+        console.log(`edge_noRight: ${this._object.edge_noRight}`);
+        console.log(`slashes_onlyStraight: ${this._object.slashes_onlyStraight}`);
+        console.log(`slashes_noLeft: ${this._object.slashes_noLeft}`);
+        console.log(`slashes_noRight: ${this._object.slashes_noRight}`);
         this.turn();
         console.log(`this._object.randomTurn: ${this._object.randomTurn}`);
+        console.log('straight, then return');
         this.goStraight(rowIndex, columnIndex);
         return;
       } else if (this._object.slashes_onlyStraight === false) {
+        console.log(`edge_onlyStraight: ${this._object.edge_onlyStraight}`);
+        console.log(`edge_noLeft: ${this._object.edge_noLeft}`);
+        console.log(`edge_noRight: ${this._object.edge_noRight}`);
+        console.log(`slashes_onlyStraight: ${this._object.slashes_onlyStraight}`);
+        console.log(`slashes_noLeft: ${this._object.slashes_noLeft}`);
+        console.log(`slashes_noRight: ${this._object.slashes_noRight}`);
         this.testEdge_noLeft();
         if (this._object.edge_noLeft === true) {
+          console.log(`edge_onlyStraight: ${this._object.edge_onlyStraight}`);
+          console.log(`edge_noLeft: ${this._object.edge_noLeft}`);
+          console.log(`edge_noRight: ${this._object.edge_noRight}`);
+          console.log(`slashes_onlyStraight: ${this._object.slashes_onlyStraight}`);
+          console.log(`slashes_noLeft: ${this._object.slashes_noLeft}`);
+          console.log(`slashes_noRight: ${this._object.slashes_noRight}`);
           this.testSlashes_noRight();
           if (this._object.slashes_noRight === true) {
             this._object.edge_onlyStraight = true;
+            console.log(`edge_onlyStraight: ${this._object.edge_onlyStraight}`);
+            console.log(`edge_noLeft: ${this._object.edge_noLeft}`);
+            console.log(`edge_noRight: ${this._object.edge_noRight}`);
+            console.log(`slashes_onlyStraight: ${this._object.slashes_onlyStraight}`);
+            console.log(`slashes_noLeft: ${this._object.slashes_noLeft}`);
+            console.log(`slashes_noRight: ${this._object.slashes_noRight}`);
             this.turn();
             console.log(`this._object.randomTurn: ${this._object.randomTurn}`);
+            console.log('straight, then return');
             this.goStraight(rowIndex, columnIndex);
             return;
           } else if (this._object.slashes_noRight === false) {
+            console.log(`edge_onlyStraight: ${this._object.edge_onlyStraight}`);
+            console.log(`edge_noLeft: ${this._object.edge_noLeft}`);
+            console.log(`edge_noRight: ${this._object.edge_noRight}`);
+            console.log(`slashes_onlyStraight: ${this._object.slashes_onlyStraight}`);
+            console.log(`slashes_noLeft: ${this._object.slashes_noLeft}`);
+            console.log(`slashes_noRight: ${this._object.slashes_noRight}`);
             this.turn();
             console.log(`this._object.randomTurn: ${this._object.randomTurn}`);
             if (this._object.randomTurn === 0) {
@@ -511,16 +598,41 @@ class Maze {
             }
           }
         } else if (this._object.edge_noLeft === false) {
+          console.log(`edge_onlyStraight: ${this._object.edge_onlyStraight}`);
+          console.log(`edge_noLeft: ${this._object.edge_noLeft}`);
+          console.log(`edge_noRight: ${this._object.edge_noRight}`);
+          console.log(`slashes_onlyStraight: ${this._object.slashes_onlyStraight}`);
+          console.log(`slashes_noLeft: ${this._object.slashes_noLeft}`);
+          console.log(`slashes_noRight: ${this._object.slashes_noRight}`);
           this.testEdge_noRight();
           if (this._object.edge_noRight === true) {
+            console.log(`edge_onlyStraight: ${this._object.edge_onlyStraight}`);
+            console.log(`edge_noLeft: ${this._object.edge_noLeft}`);
+            console.log(`edge_noRight: ${this._object.edge_noRight}`);
+            console.log(`slashes_onlyStraight: ${this._object.slashes_onlyStraight}`);
+            console.log(`slashes_noLeft: ${this._object.slashes_noLeft}`);
+            console.log(`slashes_noRight: ${this._object.slashes_noRight}`);
             this.testSlashes_noLeft();
             if (this._object.slashes_noLeft === true) {
               this._object.edge_onlyStraight = true;
+              console.log(`edge_onlyStraight: ${this._object.edge_onlyStraight}`);
+              console.log(`edge_noLeft: ${this._object.edge_noLeft}`);
+              console.log(`edge_noRight: ${this._object.edge_noRight}`);
+              console.log(`slashes_onlyStraight: ${this._object.slashes_onlyStraight}`);
+              console.log(`slashes_noLeft: ${this._object.slashes_noLeft}`);
+              console.log(`slashes_noRight: ${this._object.slashes_noRight}`);
               this.turn();
               console.log(`this._object.randomTurn: ${this._object.randomTurn}`);
+              console.log('straight, then return');
               this.goStraight(rowIndex, columnIndex);
               return;
             } else if (this._object.slashes_noLeft === false) {
+              console.log(`edge_onlyStraight: ${this._object.edge_onlyStraight}`);
+              console.log(`edge_noLeft: ${this._object.edge_noLeft}`);
+              console.log(`edge_noRight: ${this._object.edge_noRight}`);
+              console.log(`slashes_onlyStraight: ${this._object.slashes_onlyStraight}`);
+              console.log(`slashes_noLeft: ${this._object.slashes_noLeft}`);
+              console.log(`slashes_noRight: ${this._object.slashes_noRight}`);
               this.turn();
               console.log(`this._object.randomTurn: ${this._object.randomTurn}`);
               if (this._object.randomTurn === 0) {
@@ -530,16 +642,41 @@ class Maze {
               }
             }
           } else if (this._object.edge_noRight === false) {
+            console.log(`edge_onlyStraight: ${this._object.edge_onlyStraight}`);
+            console.log(`edge_noLeft: ${this._object.edge_noLeft}`);
+            console.log(`edge_noRight: ${this._object.edge_noRight}`);
+            console.log(`slashes_onlyStraight: ${this._object.slashes_onlyStraight}`);
+            console.log(`slashes_noLeft: ${this._object.slashes_noLeft}`);
+            console.log(`slashes_noRight: ${this._object.slashes_noRight}`);
             this.testSlashes_noLeft();
             if (this._object.slashes_noLeft === true) {
+              console.log(`edge_onlyStraight: ${this._object.edge_onlyStraight}`);
+              console.log(`edge_noLeft: ${this._object.edge_noLeft}`);
+              console.log(`edge_noRight: ${this._object.edge_noRight}`);
+              console.log(`slashes_onlyStraight: ${this._object.slashes_onlyStraight}`);
+              console.log(`slashes_noLeft: ${this._object.slashes_noLeft}`);
+              console.log(`slashes_noRight: ${this._object.slashes_noRight}`);
               this.testSlashes_noRight();
               if (this._object.slashes_noRight === true) {
                 this._object.slashes_onlyStraight = true;
+                console.log(`edge_onlyStraight: ${this._object.edge_onlyStraight}`);
+                console.log(`edge_noLeft: ${this._object.edge_noLeft}`);
+                console.log(`edge_noRight: ${this._object.edge_noRight}`);
+                console.log(`slashes_onlyStraight: ${this._object.slashes_onlyStraight}`);
+                console.log(`slashes_noLeft: ${this._object.slashes_noLeft}`);
+                console.log(`slashes_noRight: ${this._object.slashes_noRight}`);
                 this.turn();
                 console.log(`this._object.randomTurn: ${this._object.randomTurn}`);
+                console.log('straight, then return');
                 this.goStraight(rowIndex, columnIndex);
                 return;
               } else if (this._object.slashes_noRight === false) {
+                console.log(`edge_onlyStraight: ${this._object.edge_onlyStraight}`);
+                console.log(`edge_noLeft: ${this._object.edge_noLeft}`);
+                console.log(`edge_noRight: ${this._object.edge_noRight}`);
+                console.log(`slashes_onlyStraight: ${this._object.slashes_onlyStraight}`);
+                console.log(`slashes_noLeft: ${this._object.slashes_noLeft}`);
+                console.log(`slashes_noRight: ${this._object.slashes_noRight}`);
                 this.turn();
                 console.log(`this._object.randomTurn: ${this._object.randomTurn}`);
                 if (this._object.randomTurn === 0) {
@@ -549,8 +686,20 @@ class Maze {
                 }
               }
             } else if (this._object.slashes_noLeft === false) {
+              console.log(`edge_onlyStraight: ${this._object.edge_onlyStraight}`);
+              console.log(`edge_noLeft: ${this._object.edge_noLeft}`);
+              console.log(`edge_noRight: ${this._object.edge_noRight}`);
+              console.log(`slashes_onlyStraight: ${this._object.slashes_onlyStraight}`);
+              console.log(`slashes_noLeft: ${this._object.slashes_noLeft}`);
+              console.log(`slashes_noRight: ${this._object.slashes_noRight}`);
               this.testSlashes_noRight();
               if (this._object.slashes_noRight === true) {
+                console.log(`edge_onlyStraight: ${this._object.edge_onlyStraight}`);
+                console.log(`edge_noLeft: ${this._object.edge_noLeft}`);
+                console.log(`edge_noRight: ${this._object.edge_noRight}`);
+                console.log(`slashes_onlyStraight: ${this._object.slashes_onlyStraight}`);
+                console.log(`slashes_noLeft: ${this._object.slashes_noLeft}`);
+                console.log(`slashes_noRight: ${this._object.slashes_noRight}`);
                 this.turn();
                 console.log(`this._object.randomTurn: ${this._object.randomTurn}`);
                 if (this._object.randomTurn === 0) {
@@ -559,6 +708,12 @@ class Maze {
                   this.goLeft(rowIndex, columnIndex);
                 }
               } else if (this._object.slashes_noRight === false) {
+                console.log(`edge_onlyStraight: ${this._object.edge_onlyStraight}`);
+                console.log(`edge_noLeft: ${this._object.edge_noLeft}`);
+                console.log(`edge_noRight: ${this._object.edge_noRight}`);
+                console.log(`slashes_onlyStraight: ${this._object.slashes_onlyStraight}`);
+                console.log(`slashes_noLeft: ${this._object.slashes_noLeft}`);
+                console.log(`slashes_noRight: ${this._object.slashes_noRight}`);
                 this.turn();
                 console.log(`this._object.randomTurn: ${this._object.randomTurn}`);
                 if (this._object.randomTurn === 0) {
@@ -575,6 +730,8 @@ class Maze {
       }
     }
     console.log('this._i: ' + this._i);
+    rowIndex = this._slashArray[this._i - 1][0];
+    columnIndex = this._slashArray[this._i - 1][1];
     console.log('rowIndex: ' + rowIndex);
     console.log('columnIndex: ' + columnIndex);
     this.randomSlashes(rowIndex, columnIndex);
@@ -584,6 +741,4 @@ class Maze {
 
 
 const maze = new Maze();
-console.log(maze._mazeGrid);
-maze.print();
-maze.randomSlashes(15, 0);
+maze.randomSlashes(17, 0);
